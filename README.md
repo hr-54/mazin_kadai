@@ -1,1 +1,3 @@
 # mazin_kadai
+Python/FastAPIを用いて実装したAIメモアシスタントのAPIです。
+必須課題の最終コードはmain3.pyに格納されています。
