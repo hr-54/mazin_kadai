@@ -47,7 +47,7 @@ def delete_memo(id: int):
 import google.generativeai as genai
 
 # 取得したAPIキーを設定
-genai.configure(api_key="AIzaSyC_t-p_yHVG6qBHoAvpSUE0qdq9Vl2_pkg")
+genai.configure(api_key="取得した実際のAPIキーを入力")  #置き換え
 
 @app.post("/memos/{id}/summary")
 def summarize_memo(id: int):
