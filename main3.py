@@ -13,12 +13,13 @@ class Memo(BaseModel):
 # メモを保存するリスト（仮のデータベース）
 memos = []
 
-# 環境変数からAPIキーを取得
+# 環境変数からAPIキーを取得   #set GEMINI_API_KEY=" "を先に外部でしておく
 api_key = os.getenv("GEMINI_API_KEY")
-if not api_key:
-    raise RuntimeError("環境変数 GEMINI_API_KEY が設定されていません")
+if api_key:
+    genai.configure(api_key=api_key)
+else:
+    print("環境変数 GEMINI_API_KEY が設定されていません。要約はできません。")
 
-genai.configure(api_key=api_key)
 
 # メモ登録
 @app.post("/memos")  #@app.post()を使って登録のエンドポイントを定義
